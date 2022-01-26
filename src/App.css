@@ -1,38 +1,207 @@
-.App {
-  text-align: center;
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.check {
+	position: absolute;
+	z-index: 10;
+	border: none;
+	box-shadow: 0 0 0.8rem black;
+	padding: 20px;
+	border-radius: 10px;
+	align-items: center;
+	text-align: center;
+	top: 27%;
+	left: 42%;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Messie {
+	width: 600px;
+	height: 900px;
+	margin: auto;
+	margin-top: 100px;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 10em black;
+	position: relative;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;    /*   padding nie wplywa na width  */
+	visibility: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.hide{
+ 	visibility: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.show{
+	visibility: visible;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.welcome{
+	margin-bottom: 5px;
+	font-weight: 500;
+	font-family: 'Playfair Display', serif;
+}
+
+p {
+	font-size: 0.75rem;
+}
+.check-input {
+	width: 120px;
+	height: 22px;
+	padding: 3px;
+	margin-top: 20px;
+	border-radius: 10px;
+	border:none;
+	box-shadow: 0 0 1em black;
+
+}
+
+
+.logo {
+	font-family: 'Comforter', cursive;
+	font-weight: 100;
+	font-size: 2.5rem;
+	text-align: center;
+	color: #949494;
+	text-shadow: 1px 1px gray;
+}
+.mess-form{
+	position: absolute;
+	bottom: 0;
+	margin: 10px;
+}
+.mess-input {
+	height: 35px;
+	width: 530px;
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0 0 0.25em black;
+	padding: 3px;
+}
+
+.mess-input:focus {
+	outline:none;
+}
+
+.far {
+	transform: scale(1.9);
+	color: #949494;
+	cursor: pointer;
+}
+
+.send-btn {
+	border: none;
+	background-color: white;
+	margin-left: 18px;
+}
+
+.messages {
+	border: none;
+	border-radius: 10px;
+	/* box-shadow: 0 0 0.2em black; */
+	height: 780px;
+	width: 580px;
+	position: absolute;
+	bottom: 55px;
+	margin: auto;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	display: flex;
+	overflow: scroll;
+	flex-direction: column-reverse;
+	font-size: 0.7em;
+}
+
+.message {
+	display: flex;
+	color: black;
+	justify-content: space-between;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 5px;
+	box-sizing: content-box;
+	margin: 10px;
+}
+.mess {
+	max-width: 60%;
+	box-shadow: 0 0 0.15em black;
+	padding: 7px 15px 7px 10px;
+	border-radius: 15px;
+	box-sizing: content-box;
+	display: inline-block;
+	cursor: default;
+}
+
+.info {
+	visibility: hidden;
+	position: absolute;
+	z-index: 1;
+	color: black;
+	font-size: 0.95em;
+	padding: 20px 15px;
+	font-style: italic;
+}
+
+.mess:hover .info {
+	visibility: visible;
+}
+
+.info:hover {
+	opacity: 1;
+}
+
+
+
+/* responsywność */
+
+@media (max-width: 1600px) {
+	.Messie {
+		width: 500px;
+		height: 700px;
+		margin: auto;
+		margin-top: 55px;
+	}
+	.check{
+		left: 40%;
+	}
+	.mess-form{
+		position: absolute;
+		bottom: 0;
+		margin: 7px;
+	}
+	.mess-input {
+		height: 30px;
+		width: 440px;
+		border: none;
+		box-shadow: 0 0 0.25em black;
+	}
+	.far {
+		transform: scale(2.2);
+		color: #949494;
+
+	}
+	.messages {
+		border: none;
+		border-radius: 10px;
+		/* box-shadow: 0 0 0.2em black; */
+		width: 480px;
+		height: 600px;
+		position: absolute;
+		bottom: 42px;
+	}
+	h1 {
+		text-shadow: 1.5px 1.5px gray;
+	}
+	.info {
+		font-size: 0.67em;
+	}
+
 }
